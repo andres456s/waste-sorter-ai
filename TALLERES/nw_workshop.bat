@@ -1,8 +1,21 @@
 @echo off
 REM Script para duplicar una carpeta y renombrarla con un nombre personalizado y la fecha actual
+REM La ruta de la carpeta origen solo se pide la primera vez y se almacena en un archivo .txt
 
-REM Solicitar la ruta de la carpeta a duplicar
-set /p carpeta_origen="Introduce la ruta completa de la carpeta a duplicar: "
+setlocal enabledelayedexpansion
+
+REM Archivo donde se guardará la ruta
+set ruta_file=ruta_origen.txt
+
+REM Comprobar si ya se tiene almacenada la ruta
+if exist "%ruta_file%" (
+    set /p carpeta_origen=<"%ruta_file%"
+    echo Usando carpeta origen guardada: "%carpeta_origen%"
+) else (
+    set /p carpeta_origen="Introduce la ruta completa de la carpeta a duplicar: "
+    REM Guardar la ruta para futuras ejecuciones
+    echo %carpeta_origen%>"%ruta_file%"
+)
 
 REM Verifica si la carpeta existe
 if not exist "%carpeta_origen%" (
