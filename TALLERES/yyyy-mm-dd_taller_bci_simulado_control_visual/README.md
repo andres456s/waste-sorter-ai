@@ -74,11 +74,10 @@ El archivo `bci_simulado_control_visual.ipynb` incluye:
 4. Evaluación de condiciones lógicas.
 5. Simulación visual con pygame.
 
-📁 [Ver notebook en Colab](enlace-a-tu-colab-si-subes-el-archivo)
 
 ---
 
-## 🤖 Prompts utilizados (en caso de usar ChatGPT)
+## 🤖 Prompts utilizados 
 
 > “Simula una señal EEG con componentes Alpha y Beta”  
 > “Aísla la banda Alpha con filtros pasa banda usando `scipy.signal`”  
